@@ -13,10 +13,10 @@ namespace :postgresql do
     #  run "#{sudo} add-apt-repository -y ppa:pitti/postgresql"
     #end
 
-    run %Q{ #{sudo} echo "deb http://apt.postgresql.org/pub/repos/apt/ squeeze-pgdg main" >> /tmp/pgdg.list }
-    run "#{sudo} cp /tmp/pgdg.list /etc/apt/sources.list.d/pgdg.list"
+    #run %Q{ #{sudo} echo "deb http://apt.postgresql.org/pub/repos/apt/ squeeze-pgdg main" >> /tmp/pgdg.list }
+    #run "#{sudo} cp /tmp/pgdg.list /etc/apt/sources.list.d/pgdg.list"
 
-    run 'wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -'
+    #run 'wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -'
     run "#{sudo} apt-get -qq update"
     run "#{sudo} apt-get -yq install postgresql-9.3 postgresql-contrib-9.3 libpq-dev"
   end
